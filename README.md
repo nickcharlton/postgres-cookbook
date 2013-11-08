@@ -8,6 +8,9 @@ It provides recipes for installing the client libraries, configuring and tuning 
 server, and a set of `Chef::Resource` implementations to allow you to administrate
 Postgres from inside recipes.
 
+* https://wiki.debian.org/PostgreSql
+* http://www.postgresql.org/docs/9.3/interactive/admin.html
+
 ## Requirements
 
 Tested on:
