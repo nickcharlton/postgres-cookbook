@@ -8,20 +8,20 @@ It provides recipes for installing the client libraries, configuring and tuning 
 server, and a set of `Chef::Resource` implementations to allow you to administrate
 Postgres from inside recipes.
 
-# Requirements
+## Requirements
 
 Tested on:
 
 * Debian Wheezy (7.0)
 * Ubuntu Precise (12.04)
 
-# Usage
+## Usage
 
-# Attributes
+## Attributes
 
-# Recipes
+## Recipes
 
-# Author
+## Author
 
 Author: Nick Charlton (nick@nickcharlton.net)
 
