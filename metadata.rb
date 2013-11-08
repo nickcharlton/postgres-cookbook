@@ -9,5 +9,5 @@ version          '0.1.0'
 
 # we're working with the custom APT repostories
 supports 'debian'
-support 'ubuntu'
+supports 'ubuntu'
 
