@@ -12,6 +12,8 @@ Vagrant.configure("2") do |config|
   # provison using Chef Solo
   # note: this is mostly the default
   config.vm.provision :chef_solo do |chef|
-    chef.add_recipe 'postgres'
+    chef.run_list = [
+      'recipe[postgres::server]'
+    ]
   end
 end
