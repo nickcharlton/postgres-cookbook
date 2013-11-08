@@ -6,3 +6,6 @@
 # 
 # MIT Licensed
 #
+
+include_recipe 'postgres::client'
+
