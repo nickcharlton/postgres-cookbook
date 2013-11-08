@@ -33,10 +33,6 @@ databases and roles (users) with 'encryption' through `md5`.
 To add roles, databases and set permissions, you should use the resource in your 
 own recipes.
 
-## Attributes
-
-None.
-
 ## Recipes
 
 * `postgres['default']`: installs the client utilities.
@@ -46,6 +42,49 @@ connecting to a remote Postgres database).
 * `postgres['ruby']`: installs the Ruby libraries which are needed for the Chef 
 resources.
 
+## Definitions
+
+It also provides a set of definitions for creating users (roles) and databases in
+other recipes. These are derived from [Phil Cohen][]'s [chef-postgresql][] cookbook.
+
+### Users
+
+```ruby
+pg_user 'test_user' do
+    privileges superuser: false, createdb: false, login: true
+
+    password 'password'
+end
+
+# create a user with an MD5-encrypted password
+pg_user 'test_user' do
+  privileges superuser: false, createdb: false, login: true
+  encrypted_password '667ff118ef6d196c96313aeaee7da519'
+end
+
+# drop a user
+pg_user 'myuser' do
+  action :drop
+end
+```
+
+### Databases
+
+```ruby
+# create a database
+pg_database 'test_db' do
+  owner 'test_user'
+  encoding 'utf8'
+  template 'template0'
+  locale 'en_US.UTF8'
+end
+
+# drop a database
+pg_database 'test_db' do
+    action :drop
+end
+```
+
 ## Author
 
 Author: Nick Charlton (nick@nickcharlton.net)
@@ -53,4 +92,6 @@ Author: Nick Charlton (nick@nickcharlton.net)
 [Postgres]: http://www.postgresql.org/
 [pg-cookbook]:  https://github.com/opscode-cookbooks/postgresql
 [database]: https://github.com/opscode-cookbooks/database
+[Phil Cohen]: https://github.com/phlipper
+[chef-postgresql]: https://github.com/phlipper/chef-postgresql
 
