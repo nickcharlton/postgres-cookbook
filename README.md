@@ -25,8 +25,7 @@ Both versions map `postgresql` to `postgresql-9.1` and so this is what is used.
 This cookbook follows the Debian conventions quite closely, so there's a lot less
 attributes and configuration to set -- it's done already. But in general:
 
-* A limited user called `postgres` is created, either using a passowrd you specify
-(see below) or a random one which is saved in the node configuration.
+* A limited user called `postgres` is created to own the configuration and process.
 * Local Unix Socket, IPv4 and IPv6 connections are available to all Postgres
 databases and roles (users) with 'encryption' through `md5`.
 * Remote database connections are disabled.
@@ -36,7 +35,7 @@ own recipes.
 
 ## Attributes
 
-* `postgres['superuser_password']`: provide a password for the `postgres` system user.
+None.
 
 ## Recipes
 

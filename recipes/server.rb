@@ -15,6 +15,3 @@ include_recipe 'postgres::ruby'
   package pkg
 end
 
-# add a password to the postgres user (database super user)
-
-
